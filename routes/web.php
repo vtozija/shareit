@@ -27,6 +27,6 @@ Route::get('file/{id}', 'FileController@details')->name('file.show');
 
 Route::get('file/{id}/download', 'FileController@download')->name('file.download');
 
-Route::post('file/{id}/delete', 'FileController@download')->name('file.delete');
+Route::post('file/{id}/delete', 'FileController@download')->name('file.delete')->middleware('auth');
 
 Route::get('files-list', 'FileController@listFiles')->name('files-list')->middleware('auth');
